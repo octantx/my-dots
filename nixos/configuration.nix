@@ -11,7 +11,7 @@
     ];
 
   # Bootloader.
-  boot.kernelParams = ["i915.force_probe=56a1"]
+  boot.kernelParams = ["i915.force_probe=56a1"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
