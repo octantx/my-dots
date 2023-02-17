@@ -11,10 +11,13 @@
     ];
 
   # Bootloader.
+  boot.kernelParams = ["i915.force_probe=56a1"]
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.extraModulesPackages = with config.boot.kernelPackages; [
+    rtl88xxau-aircrack
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
