@@ -1,0 +1,19 @@
+layer=top
+anchor=bottom-right
+font=monospace 9
+background-color=#434c5e
+text-color=#ffffff
+width=200
+padding=10
+border-size=1
+border-color=#ffffff
+progress-color=over #262626ff
+border-radius=5
+default-timeout=3500
+group-by=summary
+
+[grouped]
+format=<b>%s</b>\n%b
+
+[mode=do-not-disturb]
+invisible=1
