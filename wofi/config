@@ -1,9 +1,9 @@
-style=/home/antarctic/.config/wofi/style.css
-xoffset=20
-yoffset=850
+style=/home/arctic/.config/wofi/style.css
+xoffset=550
+yoffset=250
 show=drun
-width=500
-height=200
+width=300
+height=300
 always_parse_args=true
 show_all=true
 print_command=true

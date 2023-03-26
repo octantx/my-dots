@@ -1,13 +1,13 @@
 layer=top
-anchor=bottom-right
+anchor=top-right
 font=monospace 9
-background-color=#434c5e
+background-color=#1f1f1f
 text-color=#ffffff
 width=200
 padding=10
 border-size=1
 border-color=#ffffff
-progress-color=over #262626ff
+progress-color=#242424
 border-radius=5
 default-timeout=3500
 group-by=summary

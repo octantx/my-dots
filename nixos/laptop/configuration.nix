@@ -11,13 +11,12 @@
     ];
 
   # Bootloader.
-  boot.kernelParams = ["i915.force_probe=56a1"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModulesPackages = with config.boot.kernelPackages; [
-    rtl88xxau-aircrack
-  ];
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -93,15 +92,21 @@
       # main packages
       alacritty
       firefox
+      vivaldi
       discord
       betterdiscordctl
       obsidian
+      gimp
       vscode
+      p7zip
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members=["arctic"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -112,6 +117,7 @@
       wofi
       mako
       hyprpaper
+      rustup
 
       # misc packages
       neofetch
